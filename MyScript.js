@@ -10,3 +10,7 @@ function myFunction() {
     fruit[fruit.length] = "Lemon";
     document.getElementById("demo").innerHTML = fruit;
 }
+
+function abc(){
+    
+}
