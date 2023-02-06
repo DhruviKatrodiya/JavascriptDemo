@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <h1>The JavaScript <i>this</i> Keyword</h1>
+    <p>In this example <strong>this</strong> refers to person2, even if it is a method of person1:</p>
+
+    <p id="demo"></p>
+    <button id="btn">Click Me!</button>
+
+
+<script>
+    const person1 = {
+        fullname:function(){
+            return this.firstname + " " + this.lastname
+        }
+    }
+    const person2 = {
+        firstname:"Dhruvi",
+        lastname:"Katrodiya",
+    }
+    let x = person1.fullname.call(person2)
+    document.getElementById("demo").innerHTML += x + "<br><br>"
+</script>
+
+
+<script>
+    const person = {
+        firstname:"Dhruvi",
+        lastname:"Katrodiya",
+        fullname:function(){
+            return this.firstname + " " + this.lastname
+        }
+    }
+    const member = {
+        firstname:"Namrata",
+        lastname:"Makan",
+
+    }
+    let fullname = person.fullname.bind(member)
+    document.getElementById("demo").innerHTML += "JavaScript Function bind(): " + fullname() + "<br><br>"
+</script>
+
+<script>
+    let hello=""
+    hello = function(){
+        document.getElementById("demo").innerHTML += this
+    }
+    window.addEventListener("load",hello)
+    document.getElementById("btn").addEventListener("click",hello)
+</script>
+
+</body>
+</html>

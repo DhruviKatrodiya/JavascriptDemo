@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>My Second JavaScript Demo</h2>
+        <h1>JavaScript Array</h1><p id="demo"></p>
+        <!-- <button onclick="myFunction3()">Fisher Yates Method</button> -->
+        <!-- <button onclick="myFunction()">Push it</button> -->
+
+        <!-- <button onclick="myFunction1()">Sort Alphabetically</button>
+        <button onclick="myFunction2()">Sort Numerically</button> -->
+        <button onclick="myFunction4()">Sort</button>
+
+
+<script>
+    const fruit = ["Mango","Kiwi","Apple", "Orange"]
+    document.getElementById("demo").innerHTML += "Fruit string : " + fruit.toString() + "<br><br> ";
+    document.getElementById("demo").innerHTML += "Fruit Join : " + fruit.join(" ** ") + "<br><br> ";
+    document.getElementById("demo").innerHTML += "Fruit pop : " + fruit + "<br> ";
+    fruit.pop()
+    document.getElementById("demo").innerHTML += "Fruits is : " + fruit + "<br><br> ";
+    document.getElementById("demo").innerHTML += "Fruits is pop : " + fruit.pop() + "<br> ";
+    document.getElementById("demo").innerHTML += "Fruits is : " + fruit + "<br><br> ";
+    document.getElementById("demo").innerHTML += "Fruits is push : " + fruit.push("Strawberry") + "<br> ";
+    document.getElementById("demo").innerHTML += "Fruits is : " + fruit + "<br><br> ";
+    document.getElementById("demo").innerHTML += "Fruits is Shift : " + fruit.shift() + "<br> ";
+    document.getElementById("demo").innerHTML += "Fruits is : " + fruit + "<br><br> ";
+    document.getElementById("demo").innerHTML += "Fruits is UnShift : " + fruit.unshift("Mango") + "<br> ";
+    document.getElementById("demo").innerHTML += "Fruits is : " + fruit + "<br><br> ";
+    document.getElementById("demo").innerHTML += "Fruit is without delete : " + fruit[0] + "<br> ";
+    document.getElementById("demo").innerHTML += "Fruits is delete : " + fruit[0] + "<br><br> ";
+
+    let len = fruit.length
+    const person = {fname:"Dhruvi",lname:"Katrodiya" , age:21}
+    let firstname = "Dhruvi"
+    let lastname = "Katrodiya"
+    let course = "M.SC.ICT"
+    const cars = new Array("Saab", "Volvo", "BMW");
+    cars[0] = "Audi"
+
+    //for loop
+    let text = "<ul>"
+    for(let i = 0 ; i < len ; i++){
+        text += "<li>" + fruit[i] + "</li>" 
+    }
+    text += "</ul>"
+
+    //foreach loop
+    let text1 = "<ul>";
+    fruit.forEach(myFunction);
+    text1 += "</ul>";
+
+    document.getElementById("demo").innerHTML += person.fname +
+        " <br>Foreach loop - Fruit List : " + text1 +
+        " <br>For loop - Fruit List : " + text +
+        " <br> Fruit Details is " + fruit +
+        " <br> Fruit last length is " + fruit[fruit.length-1] + "<br /> My name is " + firstname + " " + lastname + " " + course +
+        " <br> Cars name is " + cars[0] + " , " + cars[1] + " and " + cars[2]
+
+
+    function myFunction(value) {
+      text1 += "<li>" + value + "</li>";
+    } 
+</script>
+
+<script>
+    const Girls = ["Dhruvi", "Katrodiya"];
+    const Boys = ["ABC", "XYZ", "PQR"];
+    const Combine = Girls.concat(Boys);
+    
+    document.getElementById("demo").innerHTML += "<h2>Merging (Concatenating) Arrays </h2>" + Combine + " <br><br>";
+
+    const arr1 = ["Cecilie", "Lone"];
+    const arr2 = ["Emil", "Tobias", "Linus"];
+    const arr3 = ["Robin", "Morgan"];
+    const array = arr1.concat(arr2, arr3);
+    document.getElementById("demo").innerHTML += "<h4>Merging Three Arrays </h4>" + array + " <br><br>";
+
+    const myChildren = arr1.concat("Peter");
+    document.getElementById("demo").innerHTML += "<h4>Merging an Array with Values </h4>" + myChildren + " <br><br>";
+
+    const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("demo").innerHTML += "<h4>JavaScript Array splice() <h5>The splice() method adds new items to an array </h5></h4>" + fruits1 + " <br><br>";
+
+    fruits1.splice(2, 0, "Lemon", "Kiwi");
+    document.getElementById("demo").innerHTML += "<p>JavaScript Array splice() : </p>" + fruits1 + " <br><br>";
+
+    fruits1.splice(2, 2, "Lemon", "Kiwi");
+    document.getElementById("demo").innerHTML += "<p>JavaScript Array splice() : </p>" + fruits1 + " <br><br>";
+
+    fruits1.splice(0, 1);
+    document.getElementById("demo").innerHTML += "<p>JavaScript Array splice() : </p>" + fruits1 + " <br><br>";
+
+    const fruits2 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+    document.getElementById("demo").innerHTML += "<h4>JavaScript Array slice() </h4>" + fruits2 + " <br><br>";
+    const citrus = fruits2.slice(1,3);
+    document.getElementById("demo").innerHTML += "<p>JavaScript Array slice() : </p>" + citrus + " <br><br>";
+
+    const fruits3 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+    document.getElementById("demo").innerHTML += "<h4>Automatic toString() </h4>" + fruits3.toString() + " <br><br>";
+
+    document.getElementById("demo").innerHTML += "Array Sort : " + fruits3.sort() + " <br><br>";
+
+    document.getElementById("demo").innerHTML += "Array Reverse : " + fruits3.reverse() + " <br><br>";
+
+    const points = [40, 100, 1, 5, 25, 10];
+    document.getElementById("demo").innerHTML += "Numeric Sort array : " + points + "<br>";  
+
+    points.sort(function(a, b){return a - b});
+    document.getElementById("demo").innerHTML += "Numeric Sort array : " + points + "<br>";
+
+    points.sort(function(){return 0.5 - Math.random()});
+    document.getElementById("demo").innerHTML += "Numeric Sort array randomly : " + points + "<br><br>";
+
+    document.getElementById("demo").innerHTML += "Find the Highest (or Lowest) Array Value : " + points + "<br>";
+    points.sort(function(a, b){return b - a});
+    document.getElementById("demo").innerHTML += "Find the Highest (or Lowest) Array Value : " + points[0] + "<br>";
+
+    document.getElementById("demo").innerHTML += "Original array : " + points + "<br>";  
+    document.getElementById("demo").innerHTML += "The highest number is : " + myArrayMax(points) + "<br>";
+    document.getElementById("demo").innerHTML += "The Lowest number is : " + myArrayMin(points) + "<br>";
+
+    
+    function myArrayMax(arr) {
+        return Math.max.apply(null, arr);
+    }
+    function myArrayMin(arr) {
+        return Math.min.apply(null, arr);
+    }
+
+    function myFunction1() {
+        points.sort();
+        document.getElementById("demo").innerHTML = points;
+    }
+    function myFunction2() {
+        points.sort(function(a, b){return a - b});
+        document.getElementById("demo").innerHTML = points;
+    }
+
+</script>
+
+<script>
+    const cars2 = [
+        {type:"Volvo", year:2016},
+        {type:"Saab", year:2001},
+        {type:"BMW", year:2010}
+    ];
+
+    displayCars();
+
+    cars2.sort(function(a, b){return a.year - b.year});
+    displayCars();
+
+    function displayCars() {
+        document.getElementById("demo").innerHTML += "<br> Sort car objects on year : <br>" +
+        cars2[0].type + " " + cars2[0].year + "<br>" +
+        cars2[1].type + " " + cars2[1].year + "<br>" +
+        cars2[2].type + " " + cars2[2].year + "<br>"
+    }
+
+    function myFunction4() {
+    cars2.sort(function(a, b){
+        let x = a.type.toLowerCase();
+        let y = b.type.toLowerCase();
+        if (x < y) {return -1;}
+        if (x > y) {return 1;}
+        return 0;
+    });
+    displayCars();
+    }
+</script>
+<script src="MyScript.js"></script>
+
+    </body>
+</html>

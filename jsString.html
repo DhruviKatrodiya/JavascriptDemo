@@ -1,0 +1,186 @@
+<!-- Strings -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+</head>
+<body>
+
+    <h2>JavaScript Strings</h2>
+    <p id="demo"></p>
+
+    <script>
+        let text = "Dhruvi Katrodiya"
+        var ele = document.getElementById("demo")
+        ele.innerHTML += text + "<br><br>"
+
+        // let answer = "It's alright"
+        // ele.innerHTML += "Quotes inside a string : " + answer + "<br><br>"
+
+        // let text1 = "ABCDEFGHI"
+        // ele.innerHTML += "Length of a string : " + text1.length + "<br><br>"
+
+        // let answer1 = "It\'s alright"
+        // ele.innerHTML += "Single quote using backslash : " + answer1 + "<br><br>"
+
+        // let answer2 = "It's \"fine\" alright"
+        // ele.innerHTML += "Double quote using backslash : " + answer2 + "<br><br>"
+
+        // let answer3 = "My name is Dhruvi"
+        // ele.innerHTML += "escape sequences for new line \n : " + answer3 + "<br><br>"
+        
+        // let x = "Dhruvi"
+        // let y = new String("Dhruvi")
+        // ele.innerHTML += "Never Create string as objects == : " + (x == y) + "<br>"
+        // ele.innerHTML += "Never Create string as objects === : " + (x === y) + "<br><br>"
+
+        // let x1 = new String("Dhruvi")
+        // let y1 = new String("Dhruvi")
+        // ele.innerHTML += "<h4>Note the difference between (x==y) and (x===y)</h4>"
+        // ele.innerHTML += "Never Create string as objects == : " + (x1 == y1) + "<br>"
+        // ele.innerHTML += "Never Create string as objects === : " + (x1 === y1) + "<br><br>"
+        
+        // ele.innerHTML += "<h4>JavaScript String Methods</h4>"
+        // let text2 = "Apple, Banana, Kiwi"
+        // ele.innerHTML += "Method of Slice (string from position 7 to position 13) : " + text2.slice(7,13) + "<br>"
+        // ele.innerHTML += "Method of Slice (string from position 7) : " + text2.slice(7) + "<br>"
+
+        // ele.innerHTML += "Method of substring(string from position 7 to position 13) : " + text2.substring(7,13) + "<br>"
+        // ele.innerHTML += "Method of substring(string from position -7) : " + text2.substring(-7) + "<br>"
+
+        // ele.innerHTML += "Method of substr(string from position 7 to position 6) : " + text2.substr(7,6) + "<br>"
+
+        // let text3 = "Please visit Microsoft!"
+        // ele.innerHTML += "Method of replace() : " + "<br>Original text : " + text3 + "<br>Replace text : " + text3.replace("Microsoft","W3Schools") + "<br>"
+        // ele.innerHTML += "ignore the case : " + text3.replace(/MICROSOFT/i,"Company") + "<br>"
+
+        // let text4 = "I love cats.Cats are very easy to love. Cats are very popular."
+        // ele.innerHTML += "ReplaceAll Method : " + text4.replaceAll(/cats/ig,"dogs") + "<br>"
+
+        // ele.innerHTML += "String toUpperCase() : " + text4.toUpperCase() + "<br>"
+        // ele.innerHTML += "String toLowerCase() : " + text4.toLowerCase() + "<br>"
+
+        // let txt = "Hello"
+        // let txt2 = "World"
+        // let txt3 = txt.concat(" ",txt2)
+        // ele.innerHTML += "<br>Method of concat() joins two or more strings : " + txt3 + "<br>"
+        
+        // txt = "         Hello    world!        "
+        // txt3 = txt.trim()
+        // ele.innerHTML += "<br>Trim Method are remove the all spaces : " + txt3 + "<br>"
+        // txt3 = "        hello   world  !     "
+        // ele.innerHTML += "<br>Trimstart count the whitespace: " + txt3.trimStart() + "<br>" + txt3.trimEnd() + "<br>"
+
+        // let text1 = "5"
+        // ele.innerHTML += "<br>String Padding padStart: " + text1.padStart(4,"x") + "<br>padEnd : " + text1.padEnd(4,"x") + "<br>"
+        // let num = 5
+        // let text2 = num.toString()
+        // ele.innerHTML += "<br>To pad a number, convert the number to a string first padStart : " + text2.padStart(4,"0") + "<br>padEnd : " + text1.padEnd(4,"0") + "<br>"
+
+        // //JS String charAt()
+        // let text3 = "HELLO WORLD"
+        // ele.innerHTML += "<br>charAt() method : " + text3.charAt(0) + "<br>charCodeAt() method : " + text3.charCodeAt(0) + "<br>" 
+        // ele.innerHTML += "<br>Property Access : " + text3[0] + "<br>"
+
+        // //split method
+        // text3 = "d|h|r,u,v,i"
+        // const myArray = text3.split("|")
+        // ele.innerHTML += "<br>String Split : " + myArray[0] + "<br>"
+
+        // text3 = "Dhruvi"
+        // const myArr = text3.split("")
+        // text3 = ""
+        // for(let i = 0; i < myArr.length; i++){
+        //     text3 += myArr[i] + "<br>"
+        // }
+        // ele.innerHTML += "<br>Split Method :<br> " + text3 + "<br>"
+
+           ele.innerHTML += "<h4>JavaScript Search Methods</h4>" 
+           let str = "Please locate where 'locate' occurs!"
+           ele.innerHTML += "<br>indexOf() method returns the index of (position of) the first indexOf : " + str.indexOf("locate") + "<br>last indexOf() : " + str.lastIndexOf("locate") + "<br>" 
+
+           let text1 = "Please locate where 'locate' occurs!";
+           ele.innerHTML += "<br>Both methods accept a second parameter as the starting position for the search : " + text1.indexOf("locate", 15) + "<br>"
+
+           ele.innerHTML += "<br>search() method : " + str.search("locate") + 
+                "<br>or a Regular expression : " + str.search(/locate/) + "<br>"
+
+           let text2 = "The rain in SPAIN stays mainly in the plain"; 
+           const arr = text2.match("ain")
+           ele.innerHTML += "<br>match() method : <br>Perform a search for ain : " + arr.length + " " + arr + "<br>"
+
+           const arr1 = text2.match(/ain/ig)
+           ele.innerHTML += "<br>match() method : <br>Perform a search for ain : " + arr1.length + " " + arr1 + "<br>"
+
+           ele.innerHTML += "<h4>Template Literals</h4>"
+           let firstname = "Dhruvi"
+           let lastname = "Katrodiya"
+           let fullname = `Welcome ${firstname} ${lastname}!`
+           ele.innerHTML += "Template literals allows variables in strings : " + fullname + "<br>" 
+
+            let header = "Templates Literals";
+            let tags = ["template literals", "javascript", "es6"];
+
+            let html = `<h2>${header}</h2><ul>`;
+
+            for (const x of tags) {
+            html += `<li>${x}</li>`;
+            }
+            html += `</ul>`;
+            ele.innerHTML += "<br>Templates Literals : " + html + "<br>"
+
+            let x = 100 / "Apple";
+            ele.innerHTML += "<br>Numbers of NaN Values : " + isNaN(x) + "<br>"
+
+            ele.innerHTML += "<h4>Number Methods</h4>"
+            ele.innerHTML += 
+                            Number(true) + "<br>" +
+                            Number(false) + "<br>" +
+                            Number("10") + "<br>" + 
+                            Number("  10") + "<br>" +
+                            Number("10  ") + "<br>" +
+                            Number(" 10  ") + "<br>" +
+                            Number("10.33") + "<br>" + 
+                            Number("10,33") + "<br>" +
+                            Number("10 33") + "<br>" +
+                            Number("Dhruvi") + 
+                            "<br><br>ParseInt Method : <br>" +
+                            parseInt("-10") + "<br>" +
+                            parseInt("-10.33") + "<br>" +
+                            parseInt("10") + "<br>" +
+                            parseInt("10.33") + "<br>" +
+                            parseInt("10 6") + "<br>" +  
+                            parseInt("10 years") + "<br>" +  
+                            parseInt("years 10"); 
+
+            ele.innerHTML += "<h1>Nested Arrays and Objects</h1>"
+            let x1 = ""
+            const myObj = {
+                name: "Dhruvi",
+                age: 21,
+                cars: [
+                    {name:"Ford",models:["Fiesta","Focus","Mustang"]},
+                    {name:"BMW",models:["320","X3","X5"]},
+                    {name:"Fiat",models:["500","Panda"]}
+                ] 
+            }
+           
+            for(let i in myObj.cars){
+                x1 += "<h2>" + myObj.cars[i].name + "</h2>"
+                for(let j in myObj.cars[i].models){
+                    x1 += myObj.cars[i].models[j] + "<br>"
+                }
+            }
+            ele.innerHTML += x1 
+            ele.innerHTML += "<h5>JSON.stringify() : </h5>" + JSON.stringify(myObj) + "<br>"
+
+
+
+</script>
+
+</body>
+</html>
+

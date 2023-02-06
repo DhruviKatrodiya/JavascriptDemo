@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="demo"></p>
+
+    <script>
+      //Accessors  
+        const person = {
+            firstname: "Dhruvi",
+            lastname: "Katrodiya",
+            fullname: function(){
+                return this.firstname + " " + this.lastname;
+            }
+        }
+        let ele = document.getElementById("demo")
+        ele.innerHTML += "<h3>Getter and Setter Method</h3>"
+        ele.innerHTML += person.fullname() + "<br>"
+
+        const person2 = {
+            firstname: "Dhruvi",
+            lastname: "Katrodiya",
+            language: "",
+            get fullname(){
+                return this.firstname + " " + this.lastname;
+            },
+            set lang(lang){
+                this.language = lang.toUpperCase()
+            }
+        }
+        person2.lang = "English"
+        ele.innerHTML += "Getter : " + person2.fullname + "<br>"
+        ele.innerHTML += "Setter : " + person2.language + "<br><br>"
+
+        //JS Object Constructors
+        function Person3(first,last,age,eye){
+            this.firstname = first
+            this.lastname = last
+            this.age = age
+            this.eyeColor = eye
+        }
+        //create a person object
+        const myFather = new Person3("Pareshbhai","Katrodiya",44,"black")
+        ele.innerHTML += "<h4>JS Object Constructors </h4>"
+        ele.innerHTML += "My Father age is " + myFather.age + ".<br>"
+
+        //JS Object Prototype
+        function Person4(first,last,age,eye){
+            this.firstname = first
+            this.lastname = last
+            this.age = age 
+            this.eyeColor = eye 
+        }
+        Person4.prototype.name = function(){
+            return this.firstname + " " + this.lastname
+        }
+        const myDad = new Person4("ABC","PQR",50,"blue")
+        ele.innerHTML += "My Father name is " + myDad.name() + "<br><br>" 
+
+        //Object Iterable
+        const letters = ["a","b","c"]
+        //list all elements
+        let text = ""
+        for (const x of letters){
+            text += x + "<br>"
+        }
+        ele.innerHTML += "Iterate over an array : <br>" + text + "<br><br>"
+
+        //create an object
+        myNumbers = {}
+        //make it iterable
+        myNumbers[Symbol.iterator] = function(){
+            let n = 0
+            done = false
+            return {
+                next() {
+                    n += 10
+                    if(n == 100) { done = true }
+                    return {value:n, done:done}
+                }
+            }
+        }
+        let text1 = ""
+        for (const num of myNumbers){
+            text1 += num + "<br>"
+        }
+        ele.innerHTML += "Make it Iterable : <br>" + text1 + "<br>"
+
+        let iterator = myNumbers[Symbol.iterator]()
+        let text2 = ""
+        while(true){
+            const result = iterator.next()
+            if(result.done) break
+            text2 += result.value + "<br>"
+        }
+        ele.innerHTML += "Make it Iterable 2 : <br>" + text2 + "<br>"
+
+        //Object Sets
+        const letter = new Set(["a","b","c","d","e","f"])
+        ele.innerHTML += "Display set Size : " + letter.size + "<br>"
+
+        const g = "g"
+        const h = "h"
+        const i = "i"
+        //add the variables to the set
+        letter.add(g)
+        letter.add(h)
+        letter.add(i)
+        ele.innerHTML += "Display set Size : " + letter.size + "<br>"
+
+        //using foreach in set
+        text = ""
+        letter.forEach(function(value){
+            text += value + "<br>"
+        })
+        ele.innerHTML += "Using forEach in Set :<br> " + text + "<br>"
+        ele.innerHTML += "Set.values() returns a Set Iterator : " + letter.values() + "<br>"
+        ele.innerHTML += "Set.values() returns a Set Iterator : " + typeof letter.values() + "<br>"
+   
+        //Object Map
+        //create a map
+        const fruits = new Map([
+            ["Apples",500],
+            ["Mangos",300],
+            ["Oranges",200]
+        ])
+        //set map values
+        fruits.set("Banana",100) 
+        ele.innerHTML += "Creating a Map from an Array get : " + fruits.get("Apples") + "<br>"
+        ele.innerHTML += "Creating a Map from an Array set : " + fruits.get("Banana") + "<br>"
+        ele.innerHTML += "Creating a Map from an Array Size : " + fruits.size + "<br>"
+        ele.innerHTML += "Creating a Map from an Array Delete : " + fruits.delete("Apples") + "<br>"
+        ele.innerHTML += "Creating a Map from an Array Size : " + fruits.size + "<br>"
+        ele.innerHTML += "Creating a Map from an Array Clear : " + fruits.clear() + " Size : " + fruits.size + "<br>"
+        ele.innerHTML += "Creating a Map from an Array has : " + fruits.has("Apples") + "<br>"
+        ele.innerHTML += "Creating a Map from an Array typeof : " + typeof fruits + "<br>"
+        ele.innerHTML += "Creating a Map from an Array instanceof : " + (fruits instanceof Map) + "<br>"
+
+   
+   
+   
+   </script>
+
+</body>
+</html>

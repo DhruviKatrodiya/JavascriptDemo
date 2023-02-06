@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>JavaScript Async</h3>
+    <p id="demo"></p>
+    
+    <script>
+
+        var ele = document.getElementById("demo")
+        function myDisplayer(some){
+            ele.innerHTML += some + "<br>"
+        }
+        function myFirst(){
+            myDisplayer("Hello")
+        }
+        function mySecond(){
+            myDisplayer("GoodBye")
+        }
+        myFirst()
+        mySecond()
+
+        function myCalculator(a,b,myCallback){
+            let c = a + b
+            myCallback(c)
+        }
+        myCalculator(5,5,myDisplayer)
+
+        //callback using array
+        const myNumbers = [4,1,2,3,-5,-6,-4,21]
+        //Keep only positive numbers
+        function removeNeg(myNumbers,callback){
+            const arr = []
+            for(const x of myNumbers){
+                if(callback(x)){
+                    arr.push(x)
+                }
+            }
+            return arr
+        }
+        //Call removeNeg with a callback
+        const number = removeNeg(myNumbers,(x) => x >= 0)
+        ele.innerHTML += number.sort() + "<br>"
+
+        
+
+    </script>
+</body>
+</html>

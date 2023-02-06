@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <!-- JQuery -->
+    <h2>Setting Text Content</h2>
+    <p id="01">Hello World!</p>
+    <p id="02">Hello Sweden!</p>
+    <p id="03">Hello Japan!</p>
+
+    <p id="demo">Click or move the mouse pointer over this paragraph</p>
+    
+    <script>
+        //get Text Content
+        // $(document).ready(function(){
+        //     var myElement = $("#02").text()
+        //     // myElement.text("get HTML Content")
+        //     $("#demo").text(myElement)
+        // })
+
+        // //set HTML Content
+        // $(document).ready(function(){
+        //     $("#03").html("<b>set HTML Content</b>")
+        // })
+
+        // //get HTML Content
+        // $(document).ready(function(){
+        //     var content = $("#03").html()
+        //     $("#02").html(content)
+        //     $("#02").css("font-size","35px");
+        // })
+
+        //Hover event
+            // $(document).ready(function(){
+            //     $("#01").hover(function(){
+            //         alert("Hello Hover!")
+            //     },function(){
+            //         alert("Bye Hover!")
+            //     })
+                
+            // })
+
+        //mouseenter,mouseleave,click
+        $(document).ready(function(){
+            $("p").on({
+                mouseenter:function(){
+                    $(this).css("background-color","lightgray")
+                },
+                mouseleave:function(){
+                    $(this).css("background-color","lightblue")
+                },
+                click:function(){
+                    $(this).css("background-color","pink")
+                }
+            })
+        })        
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+            #btnon{
+                background-color: yellow;
+                padding: 10px;
+                border-radius: 15px;
+                color: red;
+                font-weight: bolder;
+                border: 5px solid yellow;
+            }
+
+            #btnon:hover{
+                background-color: red;
+                color: yellow;
+                border-color: red;
+            }
+
+          
+
+        </style>
+    </head>
+    
+    <body>
+        <h2>My First JavaScript Demo</h2>
+        <!-- <button type="button" onclick="document.getElementById('demo').innerHTML = Date()"> </button>-->
+            <button type="button" onclick="date()">Click me to Display Date and Time</button>
+        
+        <p id="demo"></p><br />
+
+        <h2>Light on and off Example</h2>
+        <button id="btnon" onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the Light</button>
+        <img id="myImage" src="pic_bulboff.gif" style="width: 100px;">
+        <button id="btnon" onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the Light</button>
+
+        <h2>Change the style in JS</h2>
+        <p id="demo1">JavaScript can change the style of an HTML element.</p>
+        <!-- <p id="demo2" style="display: none;">Hello JavaScript!</p> -->
+        <button id="clickin" type="button" onclick="document.getElementById('demo1').style.fontSize='36px'">Click In!</button>
+        <button type="button" onclick="document.getElementById('demo1').style.fontSize='20px'">Click Out!</button>
+        <button type="button" onclick="document.getElementById('demo1').style.display='none'">Hide the Element!</button>
+        <button type="button" onclick="document.getElementById('demo1').style.display='block'">Show the Hide Element!</button>
+        <br /><br /><br />
+
+        <button type="button" onclick="sumtry()">SumTry</button><br /><br />
+        <button onclick="window.print()">Print the page</button>
+       
+        <h3>Sum of Two numbers :</h3><p id="demo2">Hello JavaScript!</p>
+        <h3>JS Array :</h3><p id="demo3"></p>
+        <h3>JS Array constant Object :</h3><p id="demo4"></p>
+        <h3>Arithmetic Operators :</h3><p id="demo5"></p>
+        <h3>Arithmetic += Operators :</h3><p id="demo6"></p>
+        <h3>Arithmetic left shift Operators :</h3><p id="demo7"></p>
+        <h3>Boolean Types :</h3><p id="demo8"></p>
+        <h3>Array Types :</h3><p id="demo9"></p>
+        <h3>Typeof :</h3><p id="demo10"></p>
+        <h3>JS Function :</h3><p id="demo11"></p>
+        <h3>JS Function return :</h3><p id="demo12"></p>
+        <h3>JS Function diffrent arguments :</h3><p id="demo13"></p>
+        <h3>JS Function accessing object methods :</h3><p id="demo14"></p>
+        <h3>Template Literals :</h3><p id="demo15"></p>
+
+
+       
+
+
+<script>
+    let x,y,z;
+    x = 10;
+    y = 20;
+    z = x + y * x;
+    document.getElementById("demo2").innerHTML = "The value of z is "+ z +".";
+
+    const cars = ["saab","volvo","BMW"]
+    cars[0] = "Toyota"
+    cars.push("Audi")
+    document.getElementById("demo3").innerHTML = cars;
+
+    const car = {type:"Fiat" ,model:"500", color:"white"}
+    car.color = "red"
+    car.owner = "Dhruvi"
+    document.getElementById("demo4").innerHTML = "Car owner name is "+ car.owner
+
+    let a = 10;
+    let b = (100 + 50) * a;
+    document.getElementById("demo5").innerHTML = b;
+
+    let c = 10
+    c += 5
+    document.getElementById("demo6").innerHTML = c
+
+    let d = 10
+    d <<= 2
+    document.getElementById("demo7").innerHTML = d
+
+    let p = 5;
+    let q = 5;
+    let r = 6;
+    document.getElementById("demo8").innerHTML = (p == q) + "<br>" + (p == r) + "<br>" + (q == r)
+    + "<br>" + (q == p)+ "<br>" + (r == p);
+
+    const cars1 = ["Saab","Volvo","BMW"];
+    document.getElementById("demo9").innerHTML = cars1[0] + "  "+ cars1[1] + "  "+ cars1[2];
+
+    document.getElementById("demo10").innerHTML = 
+    typeof 0 + "<br>" + 
+    typeof "Dhruvi" + "<br>" + 
+    typeof 314 + "<br>" +
+    typeof 3.14 + "<br>" +
+    typeof (3) + "<br>" +
+    typeof (3 + 4);
+
+    function myFunction(p1, p2) {
+        return p1 * p2;
+    }
+    document.getElementById("demo11").innerHTML = myFunction(10, 20);
+
+</script>
+
+<script>
+    var x1 = myFunction(4, 3);
+    document.getElementById("demo12").innerHTML = x1;
+    
+    function myFunction(a, b) {
+      return a * b;
+    }
+
+    function toCelsius(f) {
+        return (5/9) * (f-32);
+    }
+    document.getElementById("demo13").innerHTML = toCelsius(77);
+
+
+    const person = {
+        firstname: "Dhruvi",
+        lastname: "Katrodiya",
+        id: 101,
+        fullname: function(){
+            return "I'm " + this.firstname + " " + this.lastname;
+        }
+    }
+    document.getElementById("demo14").innerHTML = person.fullname()
+
+    let header = "Templates Literals "
+    let tags = ["templates literals","javascript","es6"]
+    let html = `<h2>${header}</h2><ul>`
+        for(const x of tags){
+            html += `<li>${x}</li>`
+        }
+        html += `</ul>`
+        document.getElementById("demo15").innerHTML = html
+
+    </script>
+
+
+<script src="MyScript.js"></script>
+
+    </body>
+</html>

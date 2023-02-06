@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+
+        var ele = document.getElementById("demo")
+        ele.innerHTML += "<h2>Functions</h2>"
+
+        var x = myFunction(5,2)
+        function myFunction(a,b){
+            return a * b
+        }
+        ele.innerHTML += "Multiplication : " + x + "<br>"
+
+        //self invoking
+        // (function () {
+        //     ele.innerHTML += "Hello! I called mySelf";
+        // })();
+
+        //Arrow functions
+        let x1 = (x,y) => { return x * y } 
+        ele.innerHTML += "Arrow functions : " + x1(5,3) + "<br>"    
+
+        //Function Parameters
+        function sum(...args){
+            let sum = 0
+            for(let arg of args) sum += arg
+            return sum 
+        }
+        x1 = sum(1,2,3,4,5,6,7,8,9,10)
+        ele.innerHTML += "Sum of Parameters value : " + x1 + "<br>"
+
+        function findMax(){
+            let max = -Infinity
+            for(let i = 0; i < arguments.length; i++){
+                if(arguments[i] > max){
+                    max = arguments[i]
+                }
+            }
+            return max
+        }
+        ele.innerHTML += "Finding the largest number using the arguments object : " + findMax(11,55,45,90,100,25,63,15,20) + "<br>"
+
+        //Functions Call()
+        const person = {
+            fullname: function(city,country){
+                return this.firstname + " " + this.lastname + " ,City name is " + city + " , and Country name is " + country
+            }
+        }
+
+        const person1 = {
+            firstname:"Dhruvi",
+            lastname:"Katrodiya"
+        }
+        const person2 ={
+            firstname:"Namrata",
+            lastname:"Makan"
+        }
+        ele.innerHTML += "Using function Call() : " + person.fullname.call(person1,"Surat","India") + "<br>"
+        ele.innerHTML += "Using function Call() : " + person.fullname.call(person2,"Surat","India") + "<br>"
+        ele.innerHTML += "Using function Apply() : " + person.fullname.apply(person2,["Surat","India"]) + "<br>"
+
+        //function bind()
+        const person3 = {
+            firstname:"Dhruvi",
+            lastname:"Katrodiya",
+            display: function(){
+                ele.innerHTML += "Using function bind() : " + this.firstname + " " + this.lastname + "<br>"
+            }
+        }
+        let display = person3.display.bind(person3)
+        setTimeout(display,3000)
+
+    </script>
+
+</body>
+</html>

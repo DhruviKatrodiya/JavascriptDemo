@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>JavaScript Classes</h3>
+    <p id="demo"></p>
+    
+    <script>
+
+        var ele = document.getElementById("demo")
+        //create a classes
+        class Car{
+            constructor(name,year){
+                this.name = name
+                this.year = year
+            }
+            age(){
+                let date = new Date()
+                return date.getFullYear() - this.year
+            }
+            present(){
+                return 'I have a ' + this.name
+            }
+        }
+        //class Inherit
+        class Model extends Car{
+            constructor(name,mod){
+                super(name)
+                this.model = mod
+            }
+            show(){
+                return this.present() + ', it is a ' + this.model
+            }
+        }
+        
+        const myCar = new Car("Ford",2015)
+        const myCar2 = new Model("Ford","Mustang")
+        ele.innerHTML += "My car name is " + myCar.name + " and Year is " + myCar.year + "<br>"
+        ele.innerHTML += "My car is " + myCar.age() + " years old.<br>"
+        ele.innerHTML += "Class Inheritance : " + myCar2.show() + "<br>"
+
+
+
+    </script>
+</body>
+</html>

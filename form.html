@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #nav{
+            display: flex;
+            padding: 30px 530px;
+            font-size: 30px;
+            background-color: black;
+            position: relative;
+            color: wheat;
+        }
+        #nav2 {
+            padding-right: 40px;
+            display: flex;
+        }
+        #nav2:hover{
+            background-color: wheat;
+            color: black;
+            height: 40px;
+        }
+        .container{
+            margin: 100px 500px;
+            border: 5px dotted  blue;
+            padding: 30px ;
+            width: 30%;
+            font-size: 30px;
+            background-color: lightblue;
+            color: maroon;
+                        
+        }
+        input[type=button] {
+            font-size: 30px;
+            color: white;
+            border: 2px solid  blue;
+            border-radius: 50px;
+            width: 100%;
+            padding: 10px;
+            background-color: slateblue;
+        }
+        input[type=button]:hover {
+            font-size: 30px;
+            color: black;
+            border: 2px solid  rgb(28, 183, 28);
+            border-radius: 50px;
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(28, 183, 28);
+        }
+        input[type=text],input[type=password] {
+            font-size: 30px;
+            color: gray;
+            border: 2px solid  gray;
+            border-radius: 50px;
+            width: 60%;
+            padding: 5px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="nav">
+            <div id="nav2">Home</div>
+            <div id="nav2">About</div>
+            <div id="nav2">Contact</div>
+            <div id="nav2">Register</div>      
+    </div>
+    <form>
+        <div class="container">
+            <label>Username :</label>
+            <input type="text" value=""/><br><br>
+            <label>Password :</label>
+            <input type="password" value=""/><br><br>
+            <input type="button" value="submit"/><br>
+        </div>
+    </form>
+    
+</body>
+</html>
